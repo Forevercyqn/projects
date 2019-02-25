@@ -1,0 +1,197 @@
+<div class="content-item" data-name='角色设置'>
+    <!-- 角色设置 Character SetUp-->
+    <!-- 功能选项 -->
+    <div class="cs-function">
+        <div class="cs-item" id="cs-newPart">
+            <i class="fa fa-plus-circle"></i>
+            <span class="cs-item-name">新建角色</span>
+        </div>
+        <div class="cs-item" id="cs-editPart">
+            <i class="fa fa-edit"></i>
+            <span class="cs-item-name">编辑角色</span>
+        </div>
+        <div class="cs-item" id="cs-deletePart">
+            <i class="fa fa-times-circle"></i>
+            <span class="cs-item-name">删除角色</span>
+        </div>
+        <div class="cs-item" id="cs-addPerson">
+            <i class="fa fa-user-plus"></i>
+            <span class="cs-item-name">添加人员</span>
+        </div>
+    </div>
+    <!-- 表格 -->
+    <div class="cs-table clearfix">
+        <div class="cs-table-left">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="310">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>角色列表</th>
+                </tr>
+                </thead>
+                <tbody id="cs-part-list">
+                <tr>
+                    <td>超管</td>
+                </tr>
+                <tr>
+                    <td>日志管理</td>
+                </tr>
+                <tr>
+                    <td>表单管理</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cs-table-right">
+            <table class="layui-table cs-tab-item">
+                <colgroup>
+                    <col width="220">
+                    <col width="170">
+                    <col width="270">
+                    <col width="420">
+                    <col width="170">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>职位</th>
+                    <th>联系方式</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>李玉玲1</td>
+                    <td>产品</td>
+                    <td>产品专员</td>
+                    <td>13589642366</td>
+                    <td><i class="fa fa-trash"></i></td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>产品</td>
+                    <td>产品专员</td>
+                    <td>13589642366</td>
+                    <td><i class="fa fa-trash"></i></td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>产品</td>
+                    <td>产品专员</td>
+                    <td>13589642366</td>
+                    <td><i class="fa fa-trash"></i></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="layui-table cs-tab-item">
+                <colgroup>
+                    <col width="220">
+                    <col width="170">
+                    <col width="270">
+                    <col width="420">
+                    <col width="170">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>职位</th>
+                    <th>联系方式</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>李玉玲2</td>
+                    <td>产品</td>
+                    <td>产品专员</td>
+                    <td>13589642366</td>
+                    <td><i class="fa fa-trash"></i></td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="layui-table cs-tab-item">
+                <colgroup>
+                    <col width="220">
+                    <col width="170">
+                    <col width="270">
+                    <col width="420">
+                    <col width="170">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>职位</th>
+                    <th>联系方式</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>李玉玲3</td>
+                    <td>产品</td>
+                    <td>产品专员</td>
+                    <td>13589642366</td>
+                    <td><i class="fa fa-trash"></i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- ZTree  Test -->
+    <div class="cs-ztree">
+        <div class="cs-ztree-top">
+            <ul class="cs-tab clearfix">
+                <li class="cs-tab-active">部门</li>
+                <li>职位</li>
+            </ul>
+            <div class="cs-tab-content clearfix">
+                <div class="cs-content-item cs-content-item-active clearfix">
+                    <div class="cs-item-l">
+                        <div class="cs-item-search">
+                            <div class="cs-search-box">
+                                <input type="search" class="cs-search" placeholder="查找部门/姓名/职位">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <!-- 树形图容器 -->
+                        <div class="cs-ztree-box ztree" id="cs-tree"></div>
+                    </div>
+                    <div class="cs-item-r"></div>
+                </div>
+                <div class="cs-content-item">
+                    <div class="cs-item-l">
+                        <div class="cs-item-search">
+                            <div class="cs-search-box">
+                                <input type="search" class="cs-search" placeholder="查找部门/姓名/职位">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <!-- 树形图容器 -->
+                        <div class="cs-ztree-box ztree" id="cs-tree1"></div>
+                    </div>
+                    <div class="cs-item-r"></div>
+                </div>
+            </div>
+            <div class="cs-item-foot">
+                <div class="cs-item-foot-l">
+                    <a href="javascript:;" class="cs-item-a cs-a-close" id="cs-closeAll">全部收起</a>
+                    <a href="javascript:;" class="cs-item-a cs-a-open" id="cs-openAll">全部展开</a>
+                </div>
+                <div class="cs-item-foot-r">
+                    已选择<span>3</span>人
+                </div>
+            </div>
+        </div>
+        <div class="cs-ztree-bottom">
+            <button class="layui-btn layui-btn-normal cs-confirm-btn">确定</button>
+        </div>
+    </div>
+</div>
+<script>
+	$(".userNa").text('<?=$name?>')
+</script>

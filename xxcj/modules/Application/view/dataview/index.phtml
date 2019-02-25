@@ -1,0 +1,114 @@
+<div class="content-item data_analysis" data-name="数据分析">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">合并数据</li>
+            <li class="exprt">导出数据</li>
+        </ul>
+        <!-- <div class="pub_title">
+            <span class="pub_head">合并数据</span>
+            <span class="pub_head current_puh" >导出数据</span>
+            <div class="pub_hr"></div>
+        </div> -->
+        <div class="layui-tab-content" style="height: 100px;">
+            <!-- 合并数据部分 -->
+            <div class="layui-tab-item layui-show data_mixed">
+                <div class="data_mixed_title"><span>|</span>请选择需要关联的表单</div>
+                <div class="data_mixed_content_table">
+                    <select name="请选择表单">
+                        <option value="">请选择表单</option>
+                        <option value="">字段一</option>
+                        <option value="">字段二</option>
+                        <option value="">字段三</option>
+                        <option value="">字段四</option>
+                        <option value="">字段五</option>
+                        <option value="">字段六</option>
+                    </select>
+                    <select name="请选择表单">
+                        <option value="">请选择表单</option>
+                        <option value="">字段一</option>
+                        <option value="">字段二</option>
+                        <option value="">字段三</option>
+                        <option value="">字段四</option>
+                        <option value="">字段五</option>
+                        <option value="">字段六</option>
+                    </select>
+                    <select name="请选择表单">
+                        <option value="">请选择表单</option>
+                        <option value="">字段一</option>
+                        <option value="">字段二</option>
+                        <option value="">字段三</option>
+                        <option value="">字段四</option>
+                        <option value="">字段五</option>
+                        <option value="">字段六</option>
+                    </select>
+                    <input type="text" name="新表单名" placeholder="新表名称">
+                    <button class="layui-btn layui-btn-primary">合并数据</button>
+                </div>
+                <div class="data_mixed_content_field_tips">
+                    <span class="layui-word-aux" id="test4">请选择需要关联的字段<em>(已选择的表单发生变化,以下的已添加字段会被删除)</em>新的字段名</span>
+                    <div class="data_mixed_content_field">
+                        <select name="请选择字段">
+                            <option value="">请选择字段</option>
+                            <option value="">字段一</option>
+                            <option value="">字段二</option>
+                            <option value="">字段三</option>
+                            <option value="">字段四</option>
+                            <option value="">字段五</option>
+                            <option value="">字段六</option>
+                        </select>
+                        <select name="请选择字段">
+                            <option value="">请选择字段</option>
+                            <option value="">字段一</option>
+                            <option value="">字段二</option>
+                            <option value="">字段三</option>
+                            <option value="">字段四</option>
+                            <option value="">字段五</option>
+                            <option value="">字段六</option>
+                        </select>
+                        <select name="请选择字段">
+                            <option value="">请选择字段</option>
+                            <option value="">字段一</option>
+                            <option value="">字段二</option>
+                            <option value="">字段三</option>
+                            <option value="">字段四</option>
+                            <option value="">字段五</option>
+                            <option value="">字段六</option>
+                        </select>
+                        <input type="text" name="新表单名" placeholder="新表名称">
+                        <p><i class="fa fa-plus-circle"></i> 添加关联字段</p>
+                        <p><i class="fa fa-plus-square"></i>添加导出字段</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 导出数据部分 -->
+            <div class="layui-tab-item data_induce">
+                <div class="layui-form-item   ">
+                    <label class="layui-form-label  form-name">表单名称</label>
+                    <div class="layui-input-block  ">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                               placeholder="请输入表单名称" class="layui-input input-text ">
+                    </div>
+                </div>
+                <div class="layui-inline layui-inline_data">
+                    <label class="layui-form-label ">创建时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="date" id="date1" autocomplete="off" class="layui-input form-time">
+                    </div>
+                    <label class="layui-form-label  ">至</label>
+                    <div class="layui-input-block layui-input-block2">
+                        <input type="text" name="date" id="date2" autocomplete="off" class="layui-input form-time">
+                    </div>
+                    <div class="layui-btn-group">
+                        <button class="layui-btn   ">查询</button>
+                        <button class="layui-btn  reset ">重置</button>
+                        <button class="layui-btn">导出总表</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(".userNa").text('<?=$name?>')
+</script>

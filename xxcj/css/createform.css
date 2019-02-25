@@ -1,0 +1,482 @@
+/* 创建表单 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.create_yuansu {
+    position: absolute;
+    opacity: 0.8;
+    width: 190px;
+    height: 30px;
+    border: 1px solid #000;
+    margin: 5px 0;
+    cursor: pointer;
+    user-select: none;
+
+}
+.form-box {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin: 100px auto;
+    font-size: 0;
+    border-radius: 10px;
+}
+
+.panel {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-item {
+    width: 150px;
+    height: 25px;
+    border: 1px solid #666;
+    float: left;
+    line-height: 30px;
+    margin-bottom: 10px;
+    /* margin-right: 25px; */
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    color: #666;
+}
+
+.form-item .fa {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 10px;
+    color: #000;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.left-panel {
+    padding: 20px;
+}
+
+.right-panel {
+    border-left: 1px solid darkkhaki;
+    padding: 0px 4px !important;
+    font-size: 10px;
+    overflow-y: auto;
+}
+
+.item {
+    width: 100%;
+    max-width: 193px;
+    height: 30px;
+    line-height: 28px;
+    padding-left: 5px;
+    border: 1px solid #D9D8DB;
+    box-sizing: border-box;
+    /* display: flex; */
+    /* align-items: center; */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    user-select: none;
+    margin: 5px 0;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.item-title {
+    width: auto;
+    max-width: 80px;
+    box-sizing: border-box;
+    height: 28px;
+    /* line-height: 30px; */
+    display: inline-block;
+    padding-right: 5px;
+    /* margin-right: 10px; */
+}
+
+.item input {
+    width: auto;
+    min-width: 50px;
+    max-width: 100px;
+    height: 28px;
+    box-sizing: border-box;
+    /* line-height: 30px; */
+    display: inline-block;
+    border: none;
+    outline: none;
+}
+
+/* .item .item-box {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 10px;
+} */
+
+/* .item-con {
+    width: 70%;
+    min-width: 120px;
+    height: 30px;
+    position: relative;
+}  */
+
+input::-webkit-input-placeholder {
+    font-size: 10px;
+}
+
+input:-moz-placeholder {
+    font-size: 10px;
+}
+
+input::-moz-placeholder {
+    font-size: 10px;
+}
+
+input:-ms-input-placeholder {
+    font-size: 10px;
+}
+
+.item .fa {
+    height: 30px;
+    line-height: 30px;
+    float: right;
+    margin-right: 30px;
+}
+
+.item img {
+    width: 10px;
+    height: 10px;
+    float: right;
+    margin-top: 14px;
+    margin-right: 2px;
+    display: none;
+    /* visibility: hidden; */
+}
+
+/* .deleteBtn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: none !important;
+} */
+
+.item-active {
+    border: 2px solid #86b9ec;
+}
+
+.create_info img {
+    width: 16px;
+    height: 16px;
+}
+
+/* .item-active .deleteBtn {
+    display: block !important;
+} */
+
+/* .form_btn_box{
+    overflow: hidden !important;
+    padding: 15px 20px;
+} */
+
+/*  -------------------create_info-----------*/
+.create_info {
+    width: 180px;
+    height: auto;
+    min-height: 100px;
+    margin: 30px auto;
+    padding-top: 30px;
+    margin-top: 0 !important;
+    /* border: 1px solid #000; */
+    font-size: 12px;
+}
+
+.create_info input {
+    margin-bottom: 10px;
+}
+
+.create_info p {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.create_info input:text {
+    margin-bottom: 15px;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 12px;
+}
+
+input::-ms-input-placeholder {
+    font-size: 12px;
+}
+
+.optionBox {
+    width: 100%;
+    /* min-height:60px; */
+    max-height: 120px;
+    overflow-y: scroll;
+}
+
+.optionBox input {
+    width: 100px;
+
+}
+
+.itemBox {
+    width: 160px;
+    height: 40px;
+}
+
+.redText {
+    color: #f00;
+    margin-left: 5px;
+}
+
+.add a {
+    text-decoration: none;
+}
+
+.add a img {
+    position: relative;
+    top: -2px;
+}
+
+.itemBox img {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -2px;
+}
+
+.select_moren {
+    color: gray;
+}
+
+.shuoming {
+    font-size: 14px;
+    color: red;
+}
+
+.create_form_box {
+    height: calc(100vh - 230px + 56px);
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid #dbd7d7;
+    border-radius: 5px;
+    /*display: none;*/
+}
+
+.form_title {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #dbd7d7;
+}
+
+.form_title a {
+    color: #179EDE;
+    margin-left: 5px;
+    font-size: small;
+}
+
+.form_content_box {
+    margin-top: 15px;
+    height: 390px;
+    width: 700px;
+    outline: 1px solid #dbd7d7;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/* 三个主体 */
+.form,
+.set {
+    width: 31%;
+    height: 98%;
+}
+
+.phone {
+    width: 33%;
+    height: 100%;
+    background-image: url("../images/1_03.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 主体头部 */
+.control_title {
+    min-height: 30px;
+    background-color: #3B95CA;
+    position: relative;
+}
+
+/* 主体内容 */
+.control_form {
+    height: calc(100% - 30px);
+    background-color: #ECF7FD;
+    position: relative;
+    padding-top: 10px;
+
+}
+
+.control_btn {
+    width: 30%;
+    height: 25px;
+    background-color: #ECF7FD;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    text-align: center;
+    color: #3B95CA;
+    font-size: small;
+    line-height: 25px;
+
+}
+
+.right_btn {
+    width: 40%;
+}
+
+.btn {
+    padding-left: 3px;
+    width: 44%;
+    height: 26px;
+    border: 1px solid #999999;
+    background-color: white;
+    font-size: 12px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 10px;
+    line-height: 26px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn img {
+    width: 12px;
+    height: 12px;
+}
+
+.explain {
+    background-color: #EEEEEE;
+    position: absolute;
+    bottom: 50px;
+    font-size: small;
+    color: #3B95CA;
+}
+
+.refer {
+    height: 25px;
+    width: 70px;
+    background-color: #3B95CA;
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+/* 表单元素样式 */
+#p_container {
+    width: 201px;
+    height: 285px;
+    /*outline: 1px solid gray;*/
+    margin: 47px auto;
+    padding: 0.1px;
+    background: whitesmoke;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.inputbox {
+    width: 98%;
+    height: 30px;
+    outline: 1px solid gray;
+    margin: 10px auto;
+    background: white;
+}
+
+.inputbox:first {
+    margin: 0px auto;
+}
+
+.cue {
+    width: 40%;
+    height: inherit;
+    float: left;
+    text-align: center;
+}
+
+.cueContent {
+    font-size: 8px;
+    line-height: 30px;
+}
+
+.ip {
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.ip input {
+    width: 100%;
+    height: inherit;
+    border: 0px;
+    cursor: pointer;
+    font-size: 10px;
+    padding-left: 10px;
+    line-height: 30px;
+}
+
+.mylist {
+    width: 98%;
+    height: 30px;
+    outline: 1px solid gray;
+    margin: 10px auto;
+    background: white;
+    cursor: pointer;
+}
+
+.choicename {
+    width: 25%;
+    height: inherit;
+    float: left;
+    text-align: center;
+}
+
+.cuetext {
+    font-size: 10px;
+    line-height: 30px;
+}
+
+.iconf {
+    width: 15%;
+    height: inherit;
+    float: left;
+    margin-left: 60%;
+    text-align: center;
+}
+
+.iconfont {
+    font-size: 13px !important;
+    line-height: 30px;
+}
+.form-name{
+    top: 4px;
+}
+.layui-inline_data{
+    top:-60px;
+}

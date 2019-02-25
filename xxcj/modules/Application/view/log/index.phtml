@@ -1,0 +1,134 @@
+
+<div class="content-item" data-name='日志管理'>
+    <div class="lm_top">
+        <div class="lm_top_formName">
+            <span>表单名称:</span>
+            <input type="text" placeholder="请输入表单名称">
+        </div>
+        <div class="lm_top_happenTime">
+            <span>发生时间:</span>
+            <input type="text" id="startTime">
+            <span>至</span>
+            <input type="text" id="endTime">
+        </div>
+        <div class="lm_top_operator">
+            <span>操作者:</span>
+            <select name="" id="operator">
+                <option>请选择</option>
+                <?php foreach ($username as $value):?>
+                    <option><?= $value[0]?></option>
+                <?php endforeach;?>
+
+            </select>
+        </div>
+        <div class="lm_top_operationType">
+            <span>操作类型:</span>
+            <select name="" id="operationType">
+                <option>请选择</option>
+                <?php foreach ($operate_type as $value):?>
+                    <option><?= $value[0]?></option>
+                <?php endforeach;?>
+            </select>
+        </div>
+        <div class="lm_top_select">查询</div>
+        <div class="lm_top_reset">重置</div>
+    </div>
+    <div id="log_box">
+        <table id="log_table">
+            <thead>
+            <tr class="row row_title">
+                <th style="width: 8%;">序号</th>
+                <th>发生时间</th>
+                <th>表单名称</th>
+                <th>操作人员</th>
+                <th>操作类型</th>
+            </tr>
+            </thead>
+            <tbody id="log-list">
+
+            </tbody>
+        </table>
+        <div id="log_page">
+                <a href="/application/myform/index?page=1">首页</a>
+                <a href="/application/myform/index?page=">尾页</a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var testData=JSON.parse('<?=json_encode($data)?>');
+    var limitNum=5;
+    var str='';
+    //console.log(testData);
+    function getCondition(arr){
+        $('#log_page').html('');
+        if(arr){
+            str='';
+            // if(arr.length>=limitNum){
+            //     var laypage=layui.laypage;
+            //     laypage.render({
+            //         elem: 'log_page'
+            //         ,theme: '#1E9FFF'
+            //         ,count:arr.length
+            //         ,layout: ['prev', 'page', 'next', 'skip','last']
+            //         ,prev: '上一页'
+            //         ,next: '下一页'
+            //         ,limit:10
+            //         ,jump: function(obj){
+            //             str='';
+            //             $('#log-list').html = function(){
+            //                 thisData =arr.concat().splice(obj.curr*obj.limit - obj.limit, obj.limit);
+            //                 //console.log(thisData)
+            //                 for(var i=0;i<thisData.length;i++){
+            //                     str+=`<tr class="row">
+            //                     <td style="width:  8%;">${i+1}</td>
+            //                     <td>${thisData[i].happen_time}</td>
+            //                     <td>${thisData[i].form_name}</td>
+            //                     <td>${thisData[i].username}</td>
+            //                     <td>${thisData[i].type_name}</td>
+            //                 </tr>`
+            //                 }
+            //                 $('#log-list').html(str);
+            //             }();
+            //         }
+            //     });
+            // }
+            // else{
+            //     for(let i=0;i<arr.length;i++){
+            //         str+=`<tr class="row">
+            //         <td style="width:  8%;">${i+1}</td>
+            //         <td>${arr[i].happen_time}</td>
+            //         <td>${arr[i].form_name}</td>
+            //         <td>${arr[i].username}</td>
+            //         <td>${arr[i].type_name}</td>
+            //     </tr>`
+            //     }
+            //     if(str==""){
+            //         str=`<tr class="row">
+            //     <td colspan="5"> ! 暂无日志数据</td>
+            //     </tr>`
+            //         $('#log-list').html(str);
+            //     }
+            //     $('#log-list').html(str);
+            // }
+            for(var i=0;i<testData.length;i++){
+                str+=`<tr class="row">
+                      <td style="width:  8%;">${i+1}</td>
+                      <td>${testData[i].happen_time}</td>
+                      <td>${testData[i].form_name}</td>
+                      <td>${testData[i].username}</td>
+                      <td>${testData[i].type_name}</td>
+                </tr>`
+            }
+            $('#log-list').html(str);
+        }
+        else{
+            str=`<tr class="row">
+        <td colspan="5"> ! 暂无日志数据</td>
+        </tr>`
+            $('#log-list').html(str);
+        }
+    }
+    getCondition(testData);
+</script>

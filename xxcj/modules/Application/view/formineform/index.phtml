@@ -1,0 +1,104 @@
+<div class="content-item" data-name='授权我的'>
+    <div class="wdbd_box">
+        <div>
+            <form action="/application/formineform/index" method="get" class="wdbs_name">
+                <div>表单名称：</div><input type="text" value="<?=$condition['form_name']?>" name="form_name" placeholder="请输入表单名称" class="wdbd_text">
+                <div class="wdbd-a">创建时间 </div>&nbsp;<input type="text" name="create_time_start" class="wdbd_text createtime" value="<?=$condition['create_time>']?>">
+                <div>至</div> &nbsp;<input type="text" value="<?=$condition['create_time<']?>" name="create_time_end" class="wdbd_text arrivetime">
+                <input type="submit" value="查询" class="wdbd_button wdbd_sercher">
+                <input type="reset" value="重置" class="wdbd_button wdbd_reset">
+            </form>
+        </div>
+        <div class="wdbs_name">
+            分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类：
+            <input type="button" value="全部" class="wdbd_button wdbd_all">
+            <input type="button" value="未分类" class="wdbd_button wdbd_noclass">
+            <div type="button" class="wdbd_edit">
+                <i class="layui-icon">&#xe642;</i>
+            </div>
+        </div>
+
+        <!-- 提示-----------------------------------------------无授权表单 -->
+
+<!--        <div class="sqwd_point_content">-->
+<!--            <img src="/images/warning.png">-->
+<!--            <span>暂无授权表单</span>-->
+<!--        </div>-->
+
+        <!-- ---------------信息表 -->
+        <div class="container">
+            <div class="row empower">
+                <?php
+                foreach($data as $value):
+                ?>
+                <div class="col-xs-12 col-md-6 col-lg-4 bd_content_margin" data-id="<?=$value['id']?>" data-name="授权我的">
+                    <div class="wdbd_content">
+                        <div class="wdbd_content_head">
+                            <div class="wdbd_content_head_title">
+                                <span class="wdbd_content_title"><?=$value['form_name']?></span>
+                                <div class="wdbd_content_progress"><?php switch($value['form_status']):case "1":echo "待发布";break;case "2":echo "暂停中";break;case "3":echo "收集中";break;case "4":echo "已完成";break;default: endswitch;?></div>
+                                <span class="wdbd_content_delete"><i class="layui-icon" style="font-size:26px;">&#xe640;</i></span>
+                            </div>
+                            <div class="wdbd_content_time">创建时间：<span class="create_time"><?=$value['create_time']?></span></div>
+                            <div class="wdbd_content_time">创建者：<span create_person><?=$value['username']?></span></div>
+                        </div>
+                        <div class="wdbd_content_bottom sqwd-bottom">
+                            <div class="wdbd_content_information">
+                                <div class="wdbd_content_num">115</div>
+                                <div class="wdbd_content_ecplain">已采集数据</div>
+                            </div>
+                            <div class="wdbd_content_information">
+                                <div class="wdbd_content_num">32</div>
+                                <div>今日新增</div>
+                            </div>
+                            <div class="wdbd_content_information">
+                                <div class="wdbd_content_num">213</div>
+                                <div>表单浏览量</div>
+                            </div>
+                            <div class="wdbd_content_operation ">
+                                <div class="wdbd_content_icon bd-copy"> <img src="/images/u3.png"></div>
+                                <div class="wdbd_content_icon  bd-choosecolor">
+                                    <img src="/images/u1.png">
+                                    <div class="wdbd_content_icon choosecolor"></div>
+                                </div>
+                                <div class="wdbd_content_icon bd-see"> <img src="/images/u4.png"></div>
+                                <div class="wdbd_content_icon bd-class"> <img src="/images/u2.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                endforeach;
+                ?>
+            </div>
+            <?php
+            $otherQueryString = "";
+            foreach($condition as $key=>$value){
+                switch($key){
+                    case "form_name":
+                        $otherQueryString .="&form_name=".$value;
+                        break;
+                    case "create_time>":
+                        $otherQueryString .= "&create_time_start=".$value;
+                        break;
+                    case "create_time<":
+                        $otherQueryString .= "&create_time_end=".$value;
+                        break;
+                    default:
+                }
+            }
+            ?>
+            <div class="page_space">
+                <a href="/application/formineform/index?page=1<?=$otherQueryString?>">首页</a>
+                <?php if($currentPage !== 1):?>
+                    <a href="/application/formineform/index?page=<?=$currentPage-1?><?=$otherQueryString?>">上一页</a>
+                <?php endif;?>
+                <?php if($currentPage < $maxPage):?>
+                    <a href="/application/formineform/index?page=<?=$currentPage+1?><?=$otherQueryString?>">下一页</a>
+                <?php endif;?>
+                <a href="/application/formineform/index?page=<?=$maxPage?><?=$otherQueryString?>">尾页</a>
+            </div>
+
+        </div>
+    </div>
+</div>
